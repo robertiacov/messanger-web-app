@@ -61,9 +61,9 @@ export async function POST(request: Request) {
                 ]
             }
         });
-
+        // Single conversation const
         const singleConversation = existingConversations[0];
-
+        // Check if there is a single conversation created by user
         if (singleConversation) {
             return NextResponse.json(singleConversation);
         }
