@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 
             return NextResponse.json(newConversation);
         }
-
+        // Check for existing conversation to avoid making multiple conversation with the same user
         const existingConversations = await prisma.conversation.findMany({
             where: {
                 OR: [
