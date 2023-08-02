@@ -20,7 +20,7 @@ export async function POST(request: Request) {
         if(isGroup && (!members || members.length < 2 || !name)){
             return new NextResponse('Invalid data', {status: 400});
         }
-
+        // Function to make users be able to create groups on messanger
         if (isGroup) {
             const newConversation = await prisma.conversation.create({
                 data: {
